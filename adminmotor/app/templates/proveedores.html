@@ -1,0 +1,27 @@
+{% extends 'principal.html'%}
+{% block titulo %} Proveedores{% endblock %}
+
+{% block encabezado %} 
+{% include 'menuB.html' %}
+<div class="col-lg-12">{% include 'menuB.html' %}</div>
+<div class="col-lg-12">
+	<h1 class="page-header">Proveedores <small>Todo de tus proveedores</small></h1>  
+</div> 
+{% endblock %}
+{% block contenido%}
+<form>
+	<div class="row">
+		<div class="col-md-2">
+			<div class="list-group">
+				<a href="/clientes" class="list-group-item active">Menu Proveedores</a>
+				<a href="/altaclientes" class="list-group-item">Agregar nuevo</a>
+				<a href="#" class="list-group-item">editar</a>
+			</div>
+		</div>
+
+		<div class="col-md-12">
+
+		</div>
+	</div>
+</form>
+{% endblock %}

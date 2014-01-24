@@ -1,0 +1,99 @@
+{% extends 'principal.html'%}
+{% block titulo %} Citas de clientes{% endblock %}
+{% block encabezado %} 
+<div class="col-lg-12">
+      <h1 class="page-header">Citas <small>Reserva una cita!</small></h1>
+      
+    </div> 
+  {% endblock %}
+{% block contenido%}
+  <form class="form-horizontal" role="form" id="formcreateuser" action="" method="post">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="form-group col-lg-12">
+          <label for="inputNombre" class="col-sm-2 control-label">Nombre(s)</label>
+          <div class="col-sm-10">
+            <input type="text" name="username" class="form-control" id="inputNombre" placeholder="Juan ">
+          </div>
+        </div>
+
+        <div class="form-group col-lg-12">
+          <label for="inputApellido" class="col-sm-2 control-label">Apellidos</label>
+          <div class="col-sm-10">
+            <input type="text" name="username" class="form-control" id="inputApellido" placeholder="Lopez Mora ">
+          </div>
+        </div>
+
+        <div class="form-group col-lg-12">
+          <label for="inputFecha" class="col-sm-2 control-label" >Fecha</label>
+          <div class=" input-group col-sm-10 input-append date" id="datetimepicker4">
+            <span class="input-group-addon add-on "><i class="fa fa-calendar"></i></span>
+            <input data-format="dd-MM-yyyy" type="text" name="username" class="form-control"  id="inputFecha" placeholder="DD/MM/AAAA">
+          </div>
+        </div>
+
+        <div class="form-group col-lg-12">
+          <label for="inputHora" class="col-sm-2 control-label">Horario</label>
+          <div class=" input-group col-sm-10 input-append date" id="datetimepicker3" >
+            <span class="input-group-addon add-on"><i class="fa fa-clock-o"></i></span>
+            <input data-format="hh:mm:ss" type="text" name="username" class="form-control" id="inputHora" placeholder="12:00 pm">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-4 col-sm-10">
+            <button type="submit" name="submit" class="btn btn-success">Reservar</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+          <a href="">
+            <img src="/static/img/limon-verde.jpg">
+          </a>
+      </div>
+    </div>
+  </form>
+
+  
+{% endblock%}
+
+{% block footer_scripts %} 
+  
+  
+  <script type="text/javascript"
+   src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.min.js">
+  </script>
+  <script type="text/javascript"
+   src="http://tarruda.github.com/bootstrap-datetimepicker/assets/js/bootstrap-datetimepicker.es-ES.js">
+  </script>
+ 
+  
+
+  <script type="text/javascript">
+    
+
+  </script>
+  
+
+  <script type="text/javascript">
+
+
+    $(function() {
+      $('#datetimepicker4').datetimepicker({
+        pickTime: false
+      });
+    });
+  </script>
+
+  <script type="text/javascript">
+  $(function() {
+      $('#datetimepicker3').datetimepicker({
+        pickDate: false
+
+      });
+    });
+    
+  </script>
+
+});
+{% endblock %}

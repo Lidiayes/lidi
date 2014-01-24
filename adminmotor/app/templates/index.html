@@ -1,0 +1,98 @@
+{% extends 'principal.html' %} 
+{% block titulo %} Bienvenido a {% endblock %}
+{% block encabezado %} Bienvenido {% endblock %}
+{% block slider %}
+  <div id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+          <div class="carousel-caption">
+            <h1>DIDEC</h1>
+          </div>
+        </div>
+        <div class="item">
+          <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+          <div class="carousel-caption">
+            <h1>ADMINMOTOR</h1>
+          </div>
+        </div>
+        <div class="item">
+          <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+          <div class="carousel-caption">
+            <h1>Servicios <a href="http://startbootstrap.com"></a></h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+      </a>
+  </div>
+{% endblock %}
+{% block contenido %} 
+  <div class="row">
+    <div class="col-lg-4 col-md-4">
+      <h3><i class="fa fa-check-circle"></i> BASICO</h3>
+      <p>Adminmotor te ofrece un paquete basico para la administracion de taller mecanico, con una manera muy facil y rapida de controlar tu negocio</p>
+    </div>
+    <div class="col-lg-4 col-md-4">
+      <h3><i class="fa fa-pencil"></i> INTERMEDIO</h3>
+      <p>Si tu adminitracion quieres que sea mas completa, admimotor creo un paquete intermedio que te ofrece una adminisstracion mas amplia para el control de tu negocio</p>
+    </div>
+    <div class="col-lg-4 col-md-4">
+      <h3><i class="fa fa-folder-open"></i> AVANZADO</h3>
+      <p>Si quires que tu negocio sea totalmente administrado la mejor opcion es el paquete avanzado, una administracion muy completa y rapida para un mejor control de tu negocio</p>
+    </div>
+  </div><!-- /.row -->
+
+  <div class="row">
+    <div class="col-lg-12">
+      <h2>Administracion moderna: adminmotor una nueva forma de tener el control de tu taller mecanico de una forma facil y rapido</h2>
+      <p>Quieres mejorar tu servicio!!! Adminmotor es tu mejor opcion</p>
+      <hr>
+    </div>
+  </div><!-- /.row -->
+{% endblock%}
+{% block contenido1 %}
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h2>Display Some Work on the Home Page Portfolio</h2>
+      <hr>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6">
+      <a href="portfolio-item.html"><img class="img-responsive img-home-portfolio" src="http://placehold.it/700x450"></a>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6">
+      <a href="portfolio-item.html"><img class="img-responsive img-home-portfolio" src="http://placehold.it/700x450"></a>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6">
+      <a href="portfolio-item.html"><img class="img-responsive img-home-portfolio" src="http://placehold.it/700x450"></a>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6">
+      <a href="portfolio-item.html"><img class="img-responsive img-home-portfolio" src="http://placehold.it/700x450"></a>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6">
+      <a href="portfolio-item.html"><img class="img-responsive img-home-portfolio" src="http://placehold.it/700x450"></a>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6">
+      <a href="portfolio-item.html"><img class="img-responsive img-home-portfolio" src="http://placehold.it/700x450"></a>
+    </div>
+  </div><!-- /.row -->
+{% endblock%}
+
+
+
+
+

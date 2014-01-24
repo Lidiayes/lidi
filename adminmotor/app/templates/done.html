@@ -1,0 +1,106 @@
+{% extends "principal.html" %}
+{% load url from future %}
+
+{% block titulo %} Bienvenido a Tu Cuenta{% endblock %}
+{% block encabezado %} 
+<div class="col-lg-12">
+  <h1 class="page-header">Bienvenido <small>{{ user.username }}</small></h1>  
+</div> 
+{% endblock %}
+{% block slider %}
+  <div id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+          <div class="carousel-caption">
+            <h1>Modern Business - A Bootstrap 3 Template</h1>
+          </div>
+        </div>
+        <div class="item">
+          <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+          <div class="carousel-caption">
+            <h1>Ready to Style &amp; Add Content</h1>
+          </div>
+        </div>
+        <div class="item">
+          <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+          <div class="carousel-caption">
+            <h1>Additional Layout Options at <a href="http://startbootstrap.com">http://startbootstrap.com</a></h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+      </a>
+  </div>
+{% endblock %}
+{% block contenido1 %} 
+
+  <p>Cuentas asociadas:</p>
+  <a href="{% url 'social:begin' 'facebook' %}">Facebook</a> <br />
+  <a href="{% url 'social:begin' 'google' %}">Google</a> <br />
+  <a href="{% url 'social:begin' 'google-oauth' %}">Google OAuth1</a> <br />
+  <a href="{% url 'social:begin' 'google-oauth2' %}">Google OAuth2</a> <br />
+  <a href="{% url 'social:begin' 'twitter' %}">Twitter</a> <br />
+  <a href="{% url 'social:begin' 'email' %}">Email Auth</a> <br />
+
+  {% if plus_id %}
+  <form id="google-plus" method="post" action="{% url 'social:complete' 'google-plus' %}">{% csrf_token %}
+    <input id="at" type="hidden" name="access_token" value="" />
+    <input id="code" type="hidden" name="code" value="" />
+
+    <div id="signinButton">
+      <span class="g-signin" data-scope="{{ plus_scope }}"
+                             data-clientid="{{ plus_id }}"
+                             data-redirecturi="postmessage"
+                             data-accesstype="offline"
+                             data-cookiepolicy="single_host_origin"
+                             data-callback="signInCallback">
+      </span>
+    </div>
+  </form>
+  {% endif %}
+
+{% endblock %}
+
+{% block footer_scripts %}
+{% if plus_id %}
+<!-- Google+ Sign In -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+  (function () {
+    var po = document.createElement('script');
+    po.type = 'text/javascript';
+    po.async = true;
+    po.src = 'https://plus.google.com/js/client:plusone.js?onload=start';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+<script type="text/javascript">
+  var signInCallback = function (result) {
+      if (result['error']) {
+        alert('An error happened:', result['error']);
+      } else {
+        $('#code').attr('value', result['code']);
+        $('#at').attr('value', result['access_token']);
+        $('#google-plus').submit();
+      }
+  };
+</script>
+{% endif %}
+{% endblock %}

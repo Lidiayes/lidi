@@ -1,0 +1,42 @@
+from django.conf.urls import patterns, include, url
+
+from django.contrib import admin
+admin.autodiscover()
+
+urlpatterns = patterns('',
+    # Examples:
+    # url(r'^$', 'adminmotor.views.home', name='home'),
+    # url(r'^blog/', include('blog.urls')),
+    url(r'^$','app.views.home', name='home'),
+    url(r'^paquetes/avanzado/$','app.views.avanzado', name='avanzado'),
+    url(r'^paquetes/basico/$','app.views.basico', name='basico'),
+    url(r'^paquetes/medio/$','app.views.medio', name='medio'),
+    url(r'^serviciosinicio/$','app.views.serviciosinicio', name='serviciosinicio'),
+    url(r'^servicios/$','app.views.servicios', name='servicios'),
+    url(r'^paquetebasico/$','app.views.paquetebasico', name='paquetebasico'),
+    url(r'^perfil/$','app.views.perfil', name='perfil'),
+    url(r'^contacto/$','app.views.contacto', name='contacto'),
+    url(r'^clientes/$','app.views.clientes', name='clientes'),
+    url(r'^altacitas/$','app.views.altacitas', name='altacitas'),
+    url(r'^altaproveedores/$','app.views.altaproveedores', name='altaproveedores'),
+    url(r'^altaclientes/$','app.views.altaclientes', name='altaclientes'),
+    url(r'^altavehiculo/$','app.views.altavehiculo', name='altavehiculo'),
+    url(r'^vehiculo/$','app.views.vehiculo', name='vehiculo'),
+    url(r'^altacompra/$','app.views.altacompra', name='altacompra'),
+    url(r'^altausuario/$','app.views.altausuario', name='altausuario'),
+    url(r'^altaempleado/$','app.views.altaempleado', name='altaempleado'),
+    url(r'^altaservicio/$','app.views.altaservicio', name='altaservicio'),
+    url(r'^altaproducto/$','app.views.altaproducto', name='altaproducto'),
+    url(r'^altaventa/$','app.views.altaventa', name='altaventa'),
+    url(r'^consultaclientes/$','app.views.consultaclientes', name='consultaclientes'),
+   # url(r'^add/$','add.views.add', name='add'),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^signup-email/', 'app.views.signup_email'),
+    url(r'^email-sent/', 'app.views.validation_sent'),
+    url(r'^login/$', 'app.views.home'),
+    url(r'^logout/$', 'app.views.logout', name='logout'),
+    url(r'^done/$', 'app.views.done', name='done'),
+    url(r'^email/$', 'app.views.require_email', name='require_email'),
+    url(r'^add/$','app.views.add', name='add'),
+    url(r'', include('social.apps.django_app.urls', namespace='social')),
+)
